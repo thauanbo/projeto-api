@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <body>
+    <h1>Cadastro de Usuários</h1>
+    <input id="nome" placeholder="Nome" />
+    <input id="email" placeholder="Email" />
+    <button onclick="cadastrar()">Cadastrar</button>
+
+    <h2>Lista de Usuários</h2>
+    <ul id="lista"></ul>
+
+    <script>
+      // Função para carregar a lista
+      function carregarLista() {
+        fetch("/api/usuarios")
+          .then((r) => r.json())
+          .then((data) => {
+            const lista = document.getElementById("lista");
+            lista.innerHTML = "";
+            data.forEach(
+              (u) => (lista.innerHTML += `<li>${u.nome} (${u.email})</li>`),
+            );
+          });
+      }
+
+      // Função para cadastrar
+      function cadastrar() {
+        const data = {
+          nome: document.getElementById("nome").value,
+          email: document.getElementById("email").value,
+        };
+        fetch("/api/usuarios", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }).then(() => {
+          carregarLista(); // Atualiza a lista após cadastro
+        });
+      }
+
+      carregarLista(); // Carrega ao abrir
+    </script>
+  </body>
+</html>

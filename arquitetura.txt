@@ -1,0 +1,11 @@
+projeto-api/
+├── backend/
+│   ├── main.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── frontend/
+│   ├── index.html
+│   └── Dockerfile
+├── nginx/
+│   └── nginx.conf
+└── docker-compose.yml
