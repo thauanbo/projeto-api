@@ -19,7 +19,7 @@ def get_db():
     )
 
 @app.get("/")
-def status_api():
+def status_da_api():
     return {"mensagem": "API online"}
 
 @app.get("/usuarios")
