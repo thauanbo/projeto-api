@@ -5,5 +5,5 @@ CREATE TABLE IF NOT EXISTS usuarios (
 );
 
 -- Inserindo dados iniciais para teste
-INSERT INTO usuarios (nome, email) VALUES ('João Silva', 'joao@email.com');
+INSERT INTO usuarios (nome, email) VALUES ('Albert Einstein', 'albert@email.com');
 INSERT INTO usuarios (nome, email) VALUES ('Maria Souza', 'maria@email.com');
