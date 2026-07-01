@@ -18,6 +18,10 @@ def get_db():
         database="app_db"
     )
 
+@app.get("/")
+def status_da_api():
+    return {"mensagem": "API online"}
+
 @app.get("/usuarios")
 def listar_usuarios():
     db = get_db()

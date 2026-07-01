@@ -33,7 +33,7 @@ Acesse a aplicação:
 Abra o navegador e acesse: http://localhost:8080
 
 ## 🛠️ Detalhes dos Serviços
-Backend (API): Desenvolvido em FastAPI, expõe as rotas GET /usuarios e POST /usuarios.
+Backend (API): Desenvolvido em FastAPI, expõe as rotas GET / (status), GET /usuarios e POST /usuarios.
 Nginx: Atua como gateway. Redireciona requisições iniciadas em /api/ para a porta 8000 do container da API e serve o conteúdo estático do frontend na raiz.
 Banco de Dados: MySQL configurado via Docker para persistência, com script de inicialização (init.sql) automático.
 
